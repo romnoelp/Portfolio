@@ -94,6 +94,72 @@ span {
     margin-top: 10rem;
 }
 
+.container {
+    margin: 20px;
+    width: 450px;
+    height: 600px;
+    perspective: 1500px;
+}
+
+.container-content {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.container:hover > .card{
+    cursor: pointer;    
+    transform: rotateY(180deg);
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+}
+
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    filter: drop-shadow(2px 2px 4px #4F4557);
+    backface-visibility: hidden;
+}
+
+
+
+.back {
+    background-color: #4F4557;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.back h1 {
+    font-size: 25px;
+    background-color: #4F4557;
+    color: #F4EEE0;
+}
+
+.back p {
+    font-size: 17px;
+    text-align: justify;
+    padding: 15px 20px;
+    background-color: #4F4557;
+    color: #F4EEE0;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
